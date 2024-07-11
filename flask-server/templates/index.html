@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sentiment Analysis</title>
+  </head>
+  <body>
+    <h1>Welcome to Sentiment Analysis</h1>
+    <ul>
+      <li><a href="/sentiment-distribution">View Sentiment Distribution</a></li>
+      <li><a href="/wordclouds">View Word Clouds</a></li>
+    </ul>
+
+    <script src="{{ url_for('serve_js', filename='index.js') }}"></script>
+    <script src="{{ url_for('serve_js', filename='mongodb.js') }}"></script>
+  </body>
+</html>
