@@ -1,0 +1,39 @@
+{
+    "Predicted seat count for BJP": "The predicted seat count for BJP is approximately 210.95. This is based on the model's analysis of various factors such as approval ratings, social media influence, and recent election wins.",
+    "Seat changes compared to previous election": {
+        "bjp": "The predicted seat count for bjp is 210.95, which represents a change of -90.05 seats compared to the previous election.",
+        "congress": "The predicted seat count for congress is 31.60, which represents a change of -21.40 seats compared to the previous election.",
+        "aap": "The predicted seat count for aap is 14.06, which represents a change of 14.06 seats compared to the previous election.",
+        "cpi": "The predicted seat count for cpi is 10.58, which represents a change of 10.58 seats compared to the previous election.",
+        "dmk": "The predicted seat count for dmk is 45.89, which represents a change of 45.89 seats compared to the previous election.",
+        "aitc": "The predicted seat count for aitc is 13.31, which represents a change of 13.31 seats compared to the previous election.",
+        "npp": "The predicted seat count for npp is 3.20, which represents a change of 3.20 seats compared to the previous election.",
+        "bsp": "The predicted seat count for bsp is 10.24, which represents a change of 10.24 seats compared to the previous election."
+    },
+    "Party likely to win most seats": "The party likely to win the most seats is bjp, with a predicted seat count of 210.95. This suggests that bjp has the strongest electoral performance among the analyzed parties.",
+    "BJP maintaining majority": "BJP is unlikely to maintain its majority, as the predicted seat count is 210.95, below the majority threshold of 300 seats.",
+    "Congress gaining more seats": "Congress is predicted to gain -21.40 seats compared to the previous election, reflecting an improvement in their electoral performance.",
+    "Party likely to experience decline in support": "The party likely to experience the most significant decline in voter support is bjp, with a predicted change of -90.05 seats.",
+    "Chance of coalition government forming": "There is a high chance of a coalition government forming, as no single party is expected to secure a majority on its own.",
+    "Party with highest probability of forming government": "The party with the highest probability of forming the government is bjp, given its predicted seat count of 210.95, which is the highest among all parties.",
+    "Expected overall performance of each party": {
+        "bjp": "bjp is expected to secure approximately 210.95 seats, indicating their overall performance in the election.",
+        "congress": "congress is expected to secure approximately 31.60 seats, indicating their overall performance in the election.",
+        "aap": "aap is expected to secure approximately 14.06 seats, indicating their overall performance in the election.",
+        "cpi": "cpi is expected to secure approximately 10.58 seats, indicating their overall performance in the election.",
+        "dmk": "dmk is expected to secure approximately 45.89 seats, indicating their overall performance in the election.",
+        "aitc": "aitc is expected to secure approximately 13.31 seats, indicating their overall performance in the election.",
+        "npp": "npp is expected to secure approximately 3.20 seats, indicating their overall performance in the election.",
+        "bsp": "bsp is expected to secure approximately 10.24 seats, indicating their overall performance in the election."
+    },
+    "Predicted change in seat count for each party": {
+        "bjp": "The seat count for bjp is predicted to change by -90.05 seats compared to the previous election.",
+        "congress": "The seat count for congress is predicted to change by -21.40 seats compared to the previous election.",
+        "aap": "The seat count for aap is predicted to change by 14.06 seats compared to the previous election.",
+        "cpi": "The seat count for cpi is predicted to change by 10.58 seats compared to the previous election.",
+        "dmk": "The seat count for dmk is predicted to change by 45.89 seats compared to the previous election.",
+        "aitc": "The seat count for aitc is predicted to change by 13.31 seats compared to the previous election.",
+        "npp": "The seat count for npp is predicted to change by 3.20 seats compared to the previous election.",
+        "bsp": "The seat count for bsp is predicted to change by 10.24 seats compared to the previous election."
+    }
+}

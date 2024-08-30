@@ -1,0 +1,27 @@
+.prediction-container {
+    margin-top: 1%;
+    text-align: center;
+  }
+  
+  .question-dropdown {
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 20px;
+  }
+  
+  .predict-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .loading {
+    margin-top: 20px;
+  }
+  
+  .answer {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+  }
+  

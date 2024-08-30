@@ -1,0 +1,43 @@
+{
+    "bjp": {
+      "Positive": 43.5,
+      "Neutral": 35.0,
+      "Negative": 21.5
+    },
+    "congress": {
+      "Positive": 30.5,
+      "Neutral": 34.5,
+      "Negative": 35.0
+    },
+    "AAP": {
+      "Positive": 32.0,
+      "Neutral": 52.5,
+      "Negative": 15.5
+    },
+    "CPI": {
+      "Neutral": 33.3,
+      "Positive": 33.3,
+      "Negative": 33.3
+    },
+    "DMK": {
+      "Neutral": 33.3,
+      "Positive": 33.3,
+      "Negative": 33.3
+    },
+    "AITC": {
+      "Neutral": 33.3,
+      "Positive": 33.3,
+      "Negative": 33.3
+    },
+    "NPP": {
+      "Neutral": 72.0,
+      "Positive": 19.0,
+      "Negative": 9.0
+    },
+    "BSP": {
+      "Neutral": 63.0,
+      "Negative": 29.0,
+      "Positive": 8.0
+    }
+  }
+  
