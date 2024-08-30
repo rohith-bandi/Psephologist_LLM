@@ -1,13 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import { Pie } from 'react-chartjs-2';
 import Header from './components/header';
 import Footer from './components/footer';
 import './components/Prediction.css';
+import { Chart as ChartJS, Title, Tooltip, Legend } from 'chart.js';
+
+ChartJS.register(Title, Tooltip, Legend);
 
 const Prediction = () => {
   const [selectedQuestion, setSelectedQuestion] = useState('');
   const [answer, setAnswer] = useState('');
   const [loading, setLoading] = useState(false);
+  const [chartData, setChartData] = useState(null);
 
   const questions = [
     "Predicted seat count for BJP",
@@ -20,14 +25,42 @@ const Prediction = () => {
     "Party with highest probability of forming government",
     "Expected overall performance of each party",
     "Predicted change in seat count for each party",
-    // "Which party is likely to experience a decline in voter support in the upcoming election?",
-    // "Is there a strong chance of a coalition government forming post-election?",
-    // "Which party has the highest probability of forming the government in the upcoming election?",
-    // "What is the expected overall performance of each party in the upcoming election?",
-    // "What is the predicted change in seat count for each party?",
-    // "What is the major impact of the future winning party on their success in upcoming elections?",
-    // Add more predefined questions as needed
   ];
+
+  useEffect(() => {
+    axios.get('/predicted_seat_counts.json')
+      .then((response) => {
+        const data = response.data;
+        setChartData({
+          labels: Object.keys(data),
+          datasets: [{
+            label: 'Seat Distribution',
+            data: Object.values(data),
+            backgroundColor: [
+              '#FF9F40',
+              '#36A2EB',
+              '#FFCE56',
+              '#DC143C',
+              '#000000',
+              '#008000',
+              '#0000CD',
+              '#FF6384'
+            ],
+            hoverBackgroundColor: [
+              '#FF9F40',
+              '#36A2EB',
+              '#FFCE56',
+              '#DC143C',
+              '#000000',
+              '#008000',
+              '#0000CD',
+              '#FF6384'
+            ]
+          }]
+        });
+      })
+      .catch((error) => console.error('Error loading chart data:', error));
+  }, []);
 
   const fetchAnswer = async (question) => {
     setLoading(true);
@@ -43,10 +76,48 @@ const Prediction = () => {
     }
   };
 
+  // Custom legend component
+  const Legend = ({ data }) => {
+    const { labels, datasets } = data;
+    const { backgroundColor } = datasets[0];
+    return (
+      <div className="chart-legend">
+        {labels.map((label, index) => (
+          <div key={index} className="chart-legend-item">
+            <div
+              className="chart-legend-color"
+              style={{ backgroundColor: backgroundColor[index] }}
+            ></div>
+            <span>{label}</span>
+          </div>
+        ))}
+      </div>
+    );
+  };
+
   return (
     <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
       <Header />
-      <div style={{ flex: '1', display: 'flex', flexDirection: 'column', width: '70%', justifyContent: 'flex-start', alignItems: 'center', marginLeft: '15%' }}>
+      <div className="main-content">
+        {chartData && (
+          <>
+            <div className="chart-legend">
+              <Legend data={chartData} />
+            </div>
+            <div className="chart-container">
+              <Pie
+                data={chartData}
+                options={{
+                  plugins: {
+                    legend: {
+                      display: false // Hide default legend
+                    }
+                  }
+                }}
+              />
+            </div>
+          </>
+        )}
         <div className="prediction-container">
           <h2>Select a Prediction Question</h2>
           <select
@@ -67,7 +138,7 @@ const Prediction = () => {
             Get Prediction
           </button>
           {loading && <div className="loading">Loading...</div>}
-          {answer && <div className="answer" dangerouslySetInnerHTML={{ __html: answer }} style={{width:'70%',alignItems:'center',marginLeft:'15%'}} />}
+          {answer && <div className="answer" dangerouslySetInnerHTML={{ __html: answer }} />}
         </div>
       </div>
       <Footer />

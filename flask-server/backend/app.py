@@ -15,7 +15,7 @@ app = Flask(__name__)
 CORS(app, resources={r"/api/*": {"origins": "http://localhost:3000"}})  # Allow CORS for your specific API endpoints
 
 # Configure the generative AI model
-genai.configure(api_key=os.getenv("GOOGLE_API_KEY"))
+genai.configure(api_key="AIzaSyC-6CFCa1-O6xfskb_Xs2rirUJ7YIdd6Ws")
 model = genai.GenerativeModel('gemini-pro')
 chat = model.start_chat(history=[])
 
@@ -27,7 +27,7 @@ def get_llama2_response(question, prompt):
 def read_sql_query(sql):
     config = {
         'user': 'root',
-        'password': os.getenv('DB_PASSWORD'),
+        'password': 'Rohith@0508',
         'host': 'localhost',
         'database': 'voting',
         'cursorclass': pymysql.cursors.DictCursor
