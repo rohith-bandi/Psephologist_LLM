@@ -1,39 +1,39 @@
 {
-    "Predicted seat count for BJP": "The predicted seat count for BJP is approximately 256.",
-    "Seat changes compared to previous election": {
-        "bjp": "The predicted seat count for bjp is 256, which represents a change of -45 seats compared to the previous election.",
-        "congress": "The predicted seat count for congress is 102, which represents a change of 49 seats compared to the previous election.",
-        "aap": "The predicted seat count for aap is 15, which represents a change of 14 seats compared to the previous election.",
-        "dmk": "The predicted seat count for dmk is 26, which represents a change of 2 seats compared to the previous election.",
-        "cpi": "The predicted seat count for cpi is 6, which represents a change of 4 seats compared to the previous election.",
-        "aitc": "The predicted seat count for aitc is 45, which represents a change of 22 seats compared to the previous election.",
-        "bsp": "The predicted seat count for bsp is 6, which represents a change of -4 seats compared to the previous election.",
-        "npp": "The predicted seat count for npp is 6, which represents a change of 5 seats compared to the previous election."
+    "What is the predicted seat count for BJP?": "The predicted seat count for BJP is approximately 259.",
+    "What are the seat gains or losses compared to the previous election?": {
+        "bjp": "The predicted seat count for bjp is 259, which represents a change of -42 seats compared to the previous election.",
+        "congress": "The predicted seat count for congress is 130, which represents a change of 77 seats compared to the previous election.",
+        "aap": "The predicted seat count for aap is 14, which represents a change of 13 seats compared to the previous election.",
+        "dmk": "The predicted seat count for dmk is 27, which represents a change of 3 seats compared to the previous election.",
+        "cpi": "The predicted seat count for cpi is 4, which represents a change of 2 seats compared to the previous election.",
+        "aitc": "The predicted seat count for aitc is 43, which represents a change of 20 seats compared to the previous election.",
+        "bsp": "The predicted seat count for bsp is 11, which represents a change of 1 seats compared to the previous election.",
+        "npp": "The predicted seat count for npp is 16, which represents a change of 15 seats compared to the previous election."
     },
-    "Party likely to win most seats": "The party likely to win the most seats is bjp, with a predicted seat count of 256.",
-    "BJP maintaining majority": "BJP is unlikely to maintain its majority, as the predicted seat count is 256, below the majority threshold of 300 seats.",
-    "Congress gaining more seats": "Congress is predicted to gain 49 seats compared to the previous election.",
-    "Party likely to experience decline in support": "The party likely to experience the most significant decline in voter support is bjp, with a predicted change of -45 seats.",
-    "Chance of coalition government forming": "There is a high chance of a coalition government forming.",
-    "Party with highest probability of forming government": "The party with the highest probability of forming the government is bjp, given its predicted seat count of 256.",
-    "Expected overall performance of each party": {
-        "bjp": "bjp is expected to secure approximately 256 seats.",
-        "congress": "congress is expected to secure approximately 102 seats.",
-        "aap": "aap is expected to secure approximately 15 seats.",
-        "dmk": "dmk is expected to secure approximately 26 seats.",
-        "cpi": "cpi is expected to secure approximately 6 seats.",
-        "aitc": "aitc is expected to secure approximately 45 seats.",
-        "bsp": "bsp is expected to secure approximately 6 seats.",
-        "npp": "npp is expected to secure approximately 6 seats."
+    "Which party is likely to win the most seats?": "The party likely to win the most seats is bjp, with a predicted seat count of 259.",
+    "Is BJP likely to maintain its majority?": "BJP is unlikely to maintain its majority, as the predicted seat count is 259, below the majority threshold of 300 seats.",
+    "Is Congress predicted to gain more seats?": "Congress is predicted to gain 77 seats compared to the previous election.",
+    "Which party is likely to experience the most significant decline in support?": "The party likely to experience the most significant decline in voter support is bjp, with a predicted change of -42 seats.",
+    "What is the chance of a coalition government forming?": "There is a high chance of a coalition government forming.",
+    "Which party has the highest probability of forming the government?": "The party with the highest probability of forming the government is bjp, given its predicted seat count of 259.",
+    "What is the expected overall performance of each party?": {
+        "bjp": "bjp is expected to secure approximately 259 seats.",
+        "congress": "congress is expected to secure approximately 130 seats.",
+        "aap": "aap is expected to secure approximately 14 seats.",
+        "dmk": "dmk is expected to secure approximately 27 seats.",
+        "cpi": "cpi is expected to secure approximately 4 seats.",
+        "aitc": "aitc is expected to secure approximately 43 seats.",
+        "bsp": "bsp is expected to secure approximately 11 seats.",
+        "npp": "npp is expected to secure approximately 16 seats."
     },
-    "Predicted change in seat count for each party": {
-        "bjp": "The seat count for bjp is expected to change by -45 seats compared to the previous election.",
-        "congress": "The seat count for congress is expected to change by 49 seats compared to the previous election.",
-        "aap": "The seat count for aap is expected to change by 14 seats compared to the previous election.",
-        "dmk": "The seat count for dmk is expected to change by 2 seats compared to the previous election.",
-        "cpi": "The seat count for cpi is expected to change by 4 seats compared to the previous election.",
-        "aitc": "The seat count for aitc is expected to change by 22 seats compared to the previous election.",
-        "bsp": "The seat count for bsp is expected to change by -4 seats compared to the previous election.",
-        "npp": "The seat count for npp is expected to change by 5 seats compared to the previous election."
+    "What is the predicted change in seat count for each party?": {
+        "bjp": "The seat count for bjp is expected to change by -42 seats compared to the previous election.",
+        "congress": "The seat count for congress is expected to change by 77 seats compared to the previous election.",
+        "aap": "The seat count for aap is expected to change by 13 seats compared to the previous election.",
+        "dmk": "The seat count for dmk is expected to change by 3 seats compared to the previous election.",
+        "cpi": "The seat count for cpi is expected to change by 2 seats compared to the previous election.",
+        "aitc": "The seat count for aitc is expected to change by 20 seats compared to the previous election.",
+        "bsp": "The seat count for bsp is expected to change by 1 seats compared to the previous election.",
+        "npp": "The seat count for npp is expected to change by 15 seats compared to the previous election."
     }
 }

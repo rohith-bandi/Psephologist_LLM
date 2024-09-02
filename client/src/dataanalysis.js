@@ -146,16 +146,16 @@ const Dataanalysis = () => {
             </div>
             <div style={{ display: 'flex', flexDirection: 'row', minHeight: '54vh', justifyContent: 'space-around', alignItems: 'center', backgroundColor: '#ece2e2', marginLeft: '10%', marginRight: '10%', paddingTop: '3%', paddingBottom: '3%', borderRadius: '20px' }}>
                 {loading ? <p>Loading...</p> : chartData ? <Bar data={chartData} options={{
-                    plugins: {
-                        datalabels: {
-                            color: 'black',
-                            formatter: (value, context) => {
-                                const sum = context.dataset.data.reduce((acc, val) => acc + val, 0);
-                                const percentage = (value / sum * 100).toFixed(2) + '%';
-                                return percentage;
-                            }
-                        }
-                    }
+                    // plugins: {
+                    //     datalabels: {
+                    //         color: 'black',
+                    //         formatter: (value, context) => {
+                    //             const sum = context.dataset.data.reduce((acc, val) => acc + val, 0);
+                    //             const percentage = (value / sum * 100).toFixed(2) + '%';
+                    //             return percentage;
+                    //         }
+                    //     }
+                    // }
                 }} plugins={[ChartDataLabels]} style={{ maxWidth: '1500px', maxHeight: '600px' }} /> : null}
                 {/* {Array.isArray(analysisResult) && analysisResult.length > 0 && (
                     <div style={{ backgroundColor: '#383636', padding: '1%', borderRadius: '10px' }}>

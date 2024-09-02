@@ -1,7 +1,5 @@
 import pandas as pd
-from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestRegressor, GradientBoostingRegressor, VotingRegressor
-from sklearn.metrics import mean_squared_error
 import json
 
 # 2019 data
@@ -102,9 +100,7 @@ data_2019 = {
       "CoalitionStrength": 2,
       "IncumbencyFactor": "No"
     }
-  }
-
-
+}
 
 # 2024 data (no seat count)
 data_2024 = {
@@ -196,9 +192,7 @@ data_2024 = {
         "CoalitionStrength": 1,
         "IncumbencyFactor": "No"
     }
-
 }
-
 
 # Convert 2019 data to DataFrame
 df_2019 = pd.DataFrame.from_dict(data_2019, orient='index')
@@ -219,16 +213,13 @@ X_2024 = pd.get_dummies(df_2024, columns=["IncumbencyFactor"])
 # Align columns of 2024 with 2019 data
 X_2024 = X_2024.reindex(columns=X_2019.columns, fill_value=0)
 
-# Split the 2019 data for model training and testing
-X_train, X_test, y_train, y_test = train_test_split(X_2019, y_2019, test_size=0.2, random_state=42)
-
 # Initialize and train individual models
 rf_model = RandomForestRegressor(n_estimators=100, random_state=42)
 gb_model = GradientBoostingRegressor(n_estimators=100, random_state=42)
 
 # Ensemble Learning: Combine models using VotingRegressor
 ensemble_model = VotingRegressor(estimators=[('rf', rf_model), ('gb', gb_model)])
-ensemble_model.fit(X_train, y_train)
+ensemble_model.fit(X_2019, y_2019)
 
 # Predictions for 2024
 predicted_seats_2024 = ensemble_model.predict(X_2024)
@@ -258,42 +249,31 @@ coalition_possible = any(count < majority_threshold for count in predicted_seat_
 # Answering Questions
 results = {}
 
-# 1. Compare predicted seat count for ruling party (BJP)
-results["Predicted seat count for BJP"] = f"The predicted seat count for BJP is approximately {predicted_seat_counts['bjp']}."
+results["What is the predicted seat count for BJP?"] = f"The predicted seat count for BJP is approximately {predicted_seat_counts['bjp']}."
 
-# 2. Seat gains or losses compared to previous election
-results["Seat changes compared to previous election"] = {
+results["What are the seat gains or losses compared to the previous election?"] = {
     party: f"The predicted seat count for {party} is {predicted_seat_counts[party]}, which represents a change of {seat_changes[party]} seats compared to the previous election."
     for party in predicted_seat_counts.keys()
 }
 
-# 3. Party likely to win most seats
-results["Party likely to win most seats"] = f"The party likely to win the most seats is {most_seats_party}, with a predicted seat count of {predicted_seat_counts[most_seats_party]}."
+results["Which party is likely to win the most seats?"] = f"The party likely to win the most seats is {most_seats_party}, with a predicted seat count of {predicted_seat_counts[most_seats_party]}."
 
-# 4. BJP maintaining majority
-results["BJP maintaining majority"] = f"BJP is {'likely' if bjp_majority else 'unlikely'} to maintain its majority, as the predicted seat count is {predicted_seat_counts['bjp']}, {'above' if bjp_majority else 'below'} the majority threshold of {majority_threshold} seats."
+results["Is BJP likely to maintain its majority?"] = f"BJP is {'likely' if bjp_majority else 'unlikely'} to maintain its majority, as the predicted seat count is {predicted_seat_counts['bjp']}, {'above' if bjp_majority else 'below'} the majority threshold of {majority_threshold} seats."
 
-# 5. Congress gaining more seats
-congress_gain = seat_changes.get("congress", 0)
-results["Congress gaining more seats"] = f"Congress is predicted to gain {congress_gain} seats compared to the previous election."
+results["Is Congress predicted to gain more seats?"] = f"Congress is predicted to gain {seat_changes.get('congress', 0)} seats compared to the previous election."
 
-# 6. Party likely to experience decline in support
-results["Party likely to experience decline in support"] = f"The party likely to experience the most significant decline in voter support is {decline_party}, with a predicted change of {seat_changes[decline_party]} seats."
+results["Which party is likely to experience the most significant decline in support?"] = f"The party likely to experience the most significant decline in voter support is {decline_party}, with a predicted change of {seat_changes[decline_party]} seats."
 
-# 7. Coalition government forming
-results["Chance of coalition government forming"] = f"There is {'a high' if coalition_possible else 'little'} chance of a coalition government forming."
+results["What is the chance of a coalition government forming?"] = f"There is {'a high' if coalition_possible else 'little'} chance of a coalition government forming."
 
-# 8. Highest probability of forming government
-results["Party with highest probability of forming government"] = f"The party with the highest probability of forming the government is {most_seats_party}, given its predicted seat count of {predicted_seat_counts[most_seats_party]}."
+results["Which party has the highest probability of forming the government?"] = f"The party with the highest probability of forming the government is {most_seats_party}, given its predicted seat count of {predicted_seat_counts[most_seats_party]}."
 
-# 9. Expected overall performance of each party
-results["Expected overall performance of each party"] = {
+results["What is the expected overall performance of each party?"] = {
     party: f"{party} is expected to secure approximately {predicted_seat_counts[party]} seats."
     for party in predicted_seat_counts.keys()
 }
 
-# 10. Predicted change in seat count for each party
-results["Predicted change in seat count for each party"] = {
+results["What is the predicted change in seat count for each party?"] = {
     party: f"The seat count for {party} is expected to change by {seat_changes[party]} seats compared to the previous election."
     for party in predicted_seat_counts.keys()
 }
@@ -302,7 +282,7 @@ results["Predicted change in seat count for each party"] = {
 with open("prediction.json", "w") as json_file:
     json.dump(results, json_file, indent=4)
 
-print("Results saved to election_predictions_explainable.json")
+print("Results saved to prediction.json")
 
 # Create a dictionary for the predicted seat counts only
 predicted_seat_counts_dict = {party: predicted_seat_counts[party] for party in predicted_seat_counts.keys()}
@@ -312,7 +292,3 @@ with open("predicted_seat_counts.json", "w") as json_file:
     json.dump(predicted_seat_counts_dict, json_file, indent=4)
 
 print("Predicted seat counts saved to predicted_seat_counts.json")
-
-# Output MSE of the final model
-ensemble_predictions = ensemble_model.predict(X_test)
-mse_ensemble = mean_squared_error(y_test, ensemble_predictions)

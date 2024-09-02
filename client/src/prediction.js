@@ -14,17 +14,18 @@ const Prediction = () => {
   const [loading, setLoading] = useState(false);
   const [chartData, setChartData] = useState(null);
 
+  // Full questions for the dropdown menu
   const questions = [
-    "Predicted seat count for BJP",
-    "Seat changes compared to previous election",
-    "Party likely to win most seats",
-    "BJP maintaining majority",
-    "Congress gaining more seats",
-    "Party likely to experience decline in support",
-    "Chance of coalition government forming",
-    "Party with highest probability of forming government",
-    "Expected overall performance of each party",
-    "Predicted change in seat count for each party",
+    "What is the predicted seat count for BJP?",
+    "What are the seat gains or losses compared to the previous election?",
+    "Which party is likely to win the most seats?",
+    "Is BJP likely to maintain its majority?",
+    "Is Congress predicted to gain more seats?",
+    "Which party is likely to experience the most significant decline in support?",
+    "What is the chance of a coalition government forming?",
+    "Which party has the highest probability of forming the government?",
+    "What is the expected overall performance of each party?",
+    "What is the predicted change in seat count for each party?"
   ];
 
   useEffect(() => {
